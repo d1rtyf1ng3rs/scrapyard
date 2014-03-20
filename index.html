@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spider</title>
+	<style>
+		canvas {
+			/*width: 100%;*/
+			/*height: 100%; */
+			border: none;
+			margin: 0px;
+		}
+		body {background-color: black; padding: 0px; margin: 0px;}
+	</style>
+	<script type="text/javascript" src="jquery.js">
+	</script>
+</head>
+<body>
+<canvas id='drawPort'>
+</canvas>
+<script type="text/javascript">
+	var engine = {};
+	var FPS = 60;
+	var viewport = document.getElementById('drawPort').getContext('2d');
+	viewport.offsets = $('#drawPort').offset();
+	viewport.do_resize = function(){
+		viewport.canvas.width = $(document).width();
+		viewport.canvas.height = $(document).height();
+	};
+
+	function getMousePos(canvas, evt)
+	{
+        var rect = viewport.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+    }
+
+    var randomPoint = function()
+    {
+    	this.x = parseInt(Math.random * viewport.canvas.width);
+    	this.y = parseInt(Math.random * viewport.canvas.height);
+    }
+
+	var box = function(point)
+	{
+		this.maxMove = 5;
+		if(typeof(point)=='undefined')
+		{
+			this.posX = parseInt(Math.random()*viewport.canvas.width);
+			this.posY = parseInt(Math.random()*viewport.canvas.height);
+		} else {
+			this.posX = point.x;
+			this.posY = point.y;
+		}
+		this.tick = function()
+		{
+			// a couple of behaviours
+			// this.seizure();	// like a flies
+			this.slowFall();	// like a snowflakes
+		}
+		this.seizure = function()
+		{
+			this.posX+=parseInt(Math.random()*this.maxMove - this.maxMove/2)
+			this.posY+=parseInt(Math.random()*this.maxMove - this.maxMove/2)
+			if(this.posX<0)this.posX=0;
+			if(this.posY<0)this.posY=0;
+			if(this.posX>viewport.canvas.width)  this.posX=viewport.canvas.width;
+			if(this.posY>viewport.canvas.height) this.posY=viewport.canvas.height;
+		}
+		this.slowFall = function()
+		{
+			this.posX+=parseInt(Math.random()*this.maxMove - this.maxMove/2)
+			this.posY+=parseInt(Math.random()*this.maxMove/2)
+			if(this.posX<0)this.posX=0;
+			if(this.posY<0)this.posY=viewport.canvas.height;
+			if(this.posX>viewport.canvas.width)  this.posX=viewport.canvas.width;
+			if(this.posY>viewport.canvas.height) this.posY=0;
+		}
+		this.draw = function()
+		{
+			// this.drawSnowflake();
+			this.drawBox();
+		}
+		this.drawBox = function()
+		{
+			var boxWidth = 5;
+			viewport.fillStyle = "#FFF";
+			viewport.fillRect(this.posX - boxWidth/2, this.posY - boxWidth/2, boxWidth, boxWidth);
+		}
+		this.drawSnowflake = function()
+		{
+			var maxDiameter=20;
+			var parts = 9;
+			if(typeof this.points == 'undefined')
+			{
+				this.points=[];
+				for(var i=0;i<parts;i++)
+				{
+					this.points.push(
+						{ x : parseInt(Math.random()*maxDiameter - maxDiameter/2)%maxDiameter, y : parseInt(Math.random()*maxDiameter - maxDiameter/2)%maxDiameter }
+						);
+				}
+			}
+
+			viewport.strokeStyle = "#FFF";
+			viewport.beginPath();
+			for(var i=0;i<this.points.length; i++)
+			{
+				viewport.moveTo(this.posX + this.points[i].x, this.posY + this.points[i].y);
+				viewport.lineTo(this.posX - this.points[i].x, this.posY - this.points[i].y);
+			}
+			viewport.stroke();
+		}
+	}
+
+	var line = function(pointFrom, pointTo)
+	{
+		this.from = {};
+		this.to = {};
+		this.from.x = pointFrom.x;
+		this.from.y = pointFrom.y;
+		this.to.x = pointTo.x;
+		this.to.y = pointTo.y;
+		this.draw = function()
+		{
+			viewport.moveTo(this.from.x, this.from.y);
+			viewport.lineTo(this.to.x, this.to.y);
+		}
+	}
+
+	spider = {
+		gameObjects : [],	// web lines
+		currentLine : null,
+		currentDestination : {x:0,y:0},
+		posX : 0,
+		posY : 0,
+		draw : function()
+		{
+			// TODO
+		},
+		tick : function()
+		{
+			// TODO
+		}
+
+	}
+
+	engine = {
+		gameObjects : [],
+
+		init : function(num)
+		{
+			engine.gameObjects = [];
+			for(var i=0;i<num;i++)
+			{
+				engine.gameObjects[i]=new box();
+			}
+		},
+
+		tick : function()
+		{
+			$(engine.gameObjects).each( function(){ this.tick(); });
+			viewport.fillStyle = '#000';
+			viewport.fillRect(0,0,viewport.canvas.width,viewport.canvas.height);
+			//engine.drawRecursive(engine);
+			$(engine.gameObjects).each( function(){ this.draw(); });
+		},
+
+		addBox : function(cx,cy)
+		{
+			// add one more box on mouse click
+			engine.gameObjects.push(new box({x:cx, y:cy}));
+		}
+	}
+
+	$('#drawPort').click(function(evt){
+			//console.log(evt);
+			engine.addBox(evt.clientX - viewport.offsets.left, evt.clientY - viewport.offsets.top);
+		});
+	// $(window).resize(viewport.do_resize());
+	$(document).resize(viewport.do_resize());
+
+	engine.init(3);
+	setInterval(engine.tick, 1000/FPS);
+	</script>
+</body>
+</html>

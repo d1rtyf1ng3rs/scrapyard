@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rainbow</title>
+</head>
+<style>
+	div, canvas {
+	    width:500px;
+	    height: 300px;
+	    border: 1px solid black;
+	    background: transparent;
+	    text-align:center;
+	    float: left;
+	    top: 100px;
+	    left: 100px;
+	    margin: 0;
+	    position: absolute;
+	}
+
+	#dbg {
+	    display: block;
+	    top: 300px;
+	    margin-top:350px;
+	}
+
+	div {
+		z-index: 2;
+		color: white;
+	}
+	canvas {z-index: 1;}
+	span {
+		display: block;
+		padding-top: 25%;
+		font-size: 24px;
+		text-shadow: 3px 3px 3px gray;
+	}
+
+</style>
+<body>
+	<div id="howdy">
+	    <span>Taste the rainbow!</span>
+	</div>
+	<canvas id='viewport'>
+	</canvas>
+	<p id='dbg'></p>
+
+<script type="text/javascript">
+	var alphabet='123456789abcdef0';
+	var vport = document.getElementById('viewport').getContext('2d');
+
+	function randomChar(func)
+	{
+		if(typeof func == 'function')
+		{
+			var rr = Math.random();
+			return alphabet[parseInt(func(rr))%16];
+		} else
+	    return alphabet[parseInt(Math.random()*16)];
+	}
+	function randomColor(func)
+	{
+	    var str = '#';
+	    for(var i=0;i<6;i++)str+=randomChar(func);
+	    return str;
+	}
+	var fillings = {
+		noize : function()
+		{
+			for(var x=0; x<vport.canvas.width; x++)
+		    {
+		        for(var y=0; y<vport.canvas.height; y++)
+		        {
+		            vport.fillStyle = randomColor();
+		            vport.fillRect(x,y,1,1);
+		        }
+		    }
+		},
+		pseudoNoize : function()
+		{
+			for(var x=0; x<vport.canvas.width; x++)
+		    {
+		        for(var y=0; y<vport.canvas.height; y++)
+		        {
+		        	// x/y*2
+		        	// x*x+y*y
+		        	// x*x*y
+		        	// x*x*x*y
+		        	// x*x*x*y*y
+		        	// y*y/x+2
+		            vport.fillStyle = randomColor(function(rnd){return y*y/x+2;});
+		            vport.fillRect(x,y,1,1);
+		        }
+		    }
+		},
+		vlines : function()
+		{
+
+			for(var x=0; x<vport.canvas.width; x++)
+		    {
+		 		vport.beginPath();
+		 		vport.strokeStyle = randomColor();   	
+		    	vport.moveTo(x,0);
+		    	vport.lineTo(x,vport.canvas.height);
+		    	vport.stroke();
+		    }
+		},
+		hlines : function()
+		{
+
+			for(var y=0; y<vport.canvas.height; y++)
+		    {
+		 		vport.beginPath();
+		 		vport.strokeStyle = randomColor();   	
+		    	vport.moveTo(0,y);
+		    	vport.lineTo(vport.canvas.width,y);
+		    	vport.stroke();
+		    }
+		},
+		blocks : function()
+		{
+			var blockSize = 3;
+			for(var x=0; x<vport.canvas.width/blockSize; x++)
+		    {
+		        for(var y=0; y<vport.canvas.height/blockSize; y++)
+		        {
+		            vport.fillStyle = randomColor();
+		            vport.fillRect(x*blockSize, y*blockSize, blockSize, blockSize);
+		        }
+		    }
+		}
+	}
+	function fillPort()
+	{
+		fillings.pseudoNoize();
+	}
+	setInterval(fillPort,100);
+</script>
+</body>
+</html>
