@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Обед</title>
+    <meta charset="UTF-8">
+    <style>
+        html, body {
+            background-color: #3e3e3e;
+            color: #e3e3e3;
+            font-family: "Courier New", Courier, monospace;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
+        }
+
+        .label-wrapper {
+            text-align: center;
+            margin-top: 300px;
+        }
+
+        .label {
+            font-size: 72px;
+        }
+
+        .progress-wrapper {
+            text-align: center;
+        }
+
+        .progress-wrapper div {
+            margin: 40px;
+        }
+
+        .progress-wrapper progress {
+            width: 100%;
+            height: 30px;
+        }
+
+        .progress-wrapper span {
+            font-size: 48px;
+        }
+    </style>
+    <script src='jquery-1.7.1.min.js'></script>
+    <script src='jquery-ui-1.8.18.custom.min.js'></script>
+    <script>
+        var tmr = {};
+        tmr.start_hour = 13;
+        tmr.start_minute = 0;
+
+        tmr.dinner_length = 60; //minutes
+        tmr.setLabels = function (hourFrom, minuteFrom, hourTo, minuteTo) {
+            $('.time-label-wrapper span').html(
+                    (hourFrom >= 10 ? hourFrom : '0' + hourFrom  ) + ':' +
+                    (minuteFrom >= 10 ? minuteFrom : '0' + minuteFrom  ) + ' - ' +
+                    (hourTo >= 10 ? hourTo : '0' + hourTo  ) + ':' +
+                    (minuteTo >= 10 ? minuteTo : '0' + minuteTo )
+            );
+        };
+        tmr.tick = function () {
+            var dt = new Date();
+
+            var dt_start = new Date();
+            dt_start.setHours(tmr.start_hour);
+            dt_start.setMinutes(tmr.start_minute);
+            dt_start.setSeconds(0);
+
+            var dt_end = new Date(dt_start);
+            dt_end.setMinutes(dt_end.getMinutes() + tmr.dinner_length);
+
+            tmr.setLabels(dt_start.getHours(), dt_start.getMinutes(), dt_end.getHours(), dt_end.getMinutes());
+
+            var ts = dt.getHours() * 3600 + dt.getMinutes() * 60 + dt.getSeconds();
+            var ts_start = dt_start.getHours() * 3600 + dt_start.getMinutes() * 60 + dt_start.getSeconds();
+            var ts_diff = ts - ts_start;
+
+            var progress_val = tmr.dinner_length * 60 - ts_diff;
+
+            if (progress_val > tmr.dinner_length * 60) {
+                progress_val = tmr.dinner_length * 60;
+            }
+            if (progress_val < 0) {
+                progress_val = 0;
+            }
+
+            var $pr = $('.progress-wrapper progress');
+            $pr.attr('max', tmr.dinner_length * 60);
+            $pr.attr('value', progress_val);
+        };
+        $(function () {
+            tmr.tick();
+            setInterval(tmr.tick, 1000);
+        });
+    </script>
+</head>
+<body>
+
+<div class="label-wrapper">
+    <span class="label">Обед</span>
+</div>
+<div class="progress-wrapper">
+    <div>
+        <progress max="3600" value="123"></progress>
+    </div>
+    <div class="time-label-wrapper">
+        <span>13:00 - 14:00</span>
+    </div>
+</div>
+</body>
+</html>

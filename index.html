@@ -9,7 +9,7 @@
 	nobr {background-color: white; z-index: 0;}
 	nobr:hover {z-index: 1;}
 	</style>
-	<!-- style>
+	<style>
 		canvas {
 			/*width: 100%;*/
 			/*height: 100%; */
@@ -19,12 +19,12 @@
 		body {background-color: black; padding: 0px; margin: 0px;}
 	</style>
 	<script type="text/javascript" src="jquery.js">
-	</script -->
+	</script>
 </head>
 <body>
 <canvas id='drawPort'>
 </canvas>
-<!-- script type="text/javascript">
+<script type="text/javascript">
 	var engine = {};
 	var FPS = 60;
 	var viewport = document.getElementById('drawPort').getContext('2d');
@@ -189,262 +189,7 @@
 
 	engine.init(3);
 	setInterval(engine.tick, 1000/FPS);
-</script-->
+</script>
 
-<table border=1>
-	<tr> <!-- top row -->
-		<td>{left_non_scrollable_header}</td>
-		<td>{horz_scroll_header}</td>
-		<td>{right_non_scrollable_header}</td>
-	</tr>
-	<tr> <!-- middle row -->
-		<td>{vertical_scroll_header}</td>
-		<td>{doublescroll_data}</td>
-		<td>{vertical_scroll_header_totals}</td>
-	</tr> <!-- bottom row -->
-	<tr>
-		<td>{left_non_scrollable_footer}</td>
-		<td>{horz_scroll_footer}</td>
-		<td>{right_non_scrollable_footer}</td>
-	</tr>
-</table>
-
-<!--table border="1">
-<tr>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-</tr>
-<tr>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-</tr>
-<tr>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-</tr>
-<tr>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-</tr>
-<tr>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="100"><nobr>blablablablablablablablablablablabla</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-	<td width="20"><nobr>111</nobr></td>
-</tr>
-</table-->
 </body>
 </html>
