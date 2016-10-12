@@ -2,6 +2,8 @@
     $font = !empty($_GET['font'])? $_GET['font'] : 72;
     $color = !empty($_GET['color'])? $_GET['color'] : '333333';
     $background = !empty($_GET['background'])? $_GET['background'] : 'efefef';
+    $pad = 200;
+    if(!empty($_GET['pad'])) { $pad = (int)$_GET['pad']; }
     $label = $_GET['label'];
 ?>
 
@@ -20,7 +22,7 @@
     </style>
 </head>
 <body>
-    <div style="text-align: center; padding-top: 200px">
+    <div style="text-align: center; padding-top: <?=$pad?>px">
         <div style="text-align: center">
             <span class="label">
                 <?=$label?>
