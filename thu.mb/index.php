@@ -10,11 +10,12 @@
 <html>
 <head>
     <title><?=$label?></title>
+    <link href='//fonts.googleapis.com/css?family=Droid Sans Mono' rel='stylesheet'>
     <style>
         html, body, div, span {
             background-color: #<?=$background?>;
             color: #<?=$color?>;
-            font-family: "Courier New", Courier, monospace;
+            font-family: "Droid Sans Mono";
             font-size: <?=$font?>px;
             text-shadow: 5px 5px 5px rgba(0, 0, 0, .5);
         }
