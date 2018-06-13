@@ -44,7 +44,7 @@
 <canvas id='viewport'>
 </canvas>
 
-<script type="text/javascript">
+<script type="text/ecmascript">
     $(function () {
         var alphabet = '123456789abcdef0';
         var vport = document.getElementById('viewport').getContext('2d');
@@ -55,8 +55,9 @@
 
         var frameCurrent = 0;
         var frameCount = 4;
-        var frameData = JSON.parse('{"0":{"67":{"27":"#fff","28":"#fff","29":"#fff"},"68":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff"},"69":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff"},"70":{"27":"#fff","28":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff"},"71":{"27":"#fff","28":"#fff","31":"#fff","32":"#fff","33":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"72":{"27":"#fff","28":"#fff","32":"#fff","33":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"73":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","42":"#fff","43":"#fff","44":"#fff"},"74":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","41":"#fff","42":"#fff","43":"#fff"},"75":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","40":"#fff","41":"#fff","42":"#fff"},"76":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","39":"#fff","40":"#fff","41":"#fff"},"77":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","39":"#fff","40":"#fff"},"78":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"79":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"80":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff","40":"#fff"},"81":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff"},"82":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","40":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff"},"83":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff"},"84":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff"},"85":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"86":{"27":"#fff","28":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"87":{"27":"#fff","28":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff"},"88":{"27":"#fff","28":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff"},"89":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff"},"90":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff"},"91":{"28":"#fff","29":"#fff","30":"#fff"},"92":{}},"1":{"31":{},"32":{},"33":{},"34":{},"35":{},"36":{},"37":{},"38":{},"39":{},"40":{},"41":{},"42":{},"43":{},"44":{},"45":{},"46":{},"47":{},"48":{},"49":{},"50":{},"51":{},"52":{},"53":{},"54":{},"55":{},"56":{},"67":{"27":"#fff"},"68":{"26":"#fff","27":"#fff","28":"#fff","29":"#fff"},"69":{"26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff"},"70":{"26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff"},"71":{"27":"#fff","28":"#fff","30":"#fff","31":"#fff","32":"#fff"},"72":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","27":"#fff","28":"#fff","29":"#fff","31":"#fff","32":"#fff","33":"#fff"},"73":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","27":"#fff","28":"#fff","29":"#fff","32":"#fff","33":"#fff"},"74":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff"},"75":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"76":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff","52":"#fff"},"77":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","29":"#fff","30":"#fff","31":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff"},"78":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","29":"#fff","30":"#fff","31":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff"},"79":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","40":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff"},"80":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff"},"81":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"82":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","30":"#fff","31":"#fff","38":"#fff","39":"#fff","40":"#fff"},"83":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","30":"#fff","31":"#fff","39":"#fff","40":"#fff","41":"#fff"},"84":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","30":"#fff","31":"#fff","39":"#fff","40":"#fff","41":"#fff"},"85":{"31":"#fff","32":"#fff","40":"#fff","41":"#fff","42":"#fff"},"86":{"31":"#fff","32":"#fff","41":"#fff","42":"#fff","43":"#fff"},"87":{"31":"#fff","32":"#fff","35":"#fff","36":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff"},"88":{"31":"#fff","32":"#fff","35":"#fff","36":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff"},"89":{"31":"#fff","32":"#fff","33":"#fff","35":"#fff","36":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff"},"90":{"32":"#fff","33":"#fff","35":"#fff","36":"#fff"},"91":{"32":"#fff","33":"#fff","35":"#fff","36":"#fff"},"92":{"32":"#fff","33":"#fff","35":"#fff","36":"#fff"},"93":{"32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff"},"94":{"33":"#fff","34":"#fff","35":"#fff","36":"#fff"},"95":{"33":"#fff","34":"#fff","35":"#fff"},"96":{"34":"#fff"}},"2":{"68":{"28":"#fff","29":"#fff","30":"#fff"},"69":{"28":"#fff","29":"#fff","30":"#fff"},"70":{"27":"#fff","28":"#fff","30":"#fff","31":"#fff"},"71":{"27":"#fff","28":"#fff","31":"#fff","32":"#fff"},"72":{"27":"#fff","28":"#fff","32":"#fff","33":"#fff"},"73":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","32":"#fff","33":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff"},"74":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","33":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff","51":"#fff"},"75":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff"},"76":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","39":"#fff","40":"#fff"},"77":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","38":"#fff","39":"#fff"},"78":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"79":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff"},"80":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"81":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","38":"#fff","39":"#fff","40":"#fff","41":"#fff"},"82":{"8":"#fff","9":"#fff","10":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","38":"#fff","39":"#fff","40":"#fff","41":"#fff"},"83":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff"},"84":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff"},"85":{"8":"#fff","9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","27":"#fff","28":"#fff","32":"#fff","33":"#fff","39":"#fff","40":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff"},"86":{"27":"#fff","28":"#fff","31":"#fff","32":"#fff"},"87":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff"},"88":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff"},"89":{"27":"#fff","28":"#fff","29":"#fff","30":"#fff"},"90":{"27":"#fff","28":"#fff","29":"#fff"}},"3":{"20":{},"66":{"18":"#fff","19":"#fff","20":"#fff"},"67":{"17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff"},"68":{"17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff"},"69":{"19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff"},"70":{"23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff"},"71":{"25":"#fff","26":"#fff","27":"#fff","28":"#fff"},"72":{"26":"#fff","27":"#fff","28":"#fff"},"73":{"27":"#fff","28":"#fff","29":"#fff"},"74":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff"},"75":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","41":"#fff","42":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff"},"76":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","40":"#fff","41":"#fff","42":"#fff"},"77":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","40":"#fff","41":"#fff"},"78":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","29":"#fff","30":"#fff","31":"#fff","39":"#fff","40":"#fff","41":"#fff"},"79":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff","40":"#fff"},"80":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff","29":"#fff","30":"#fff","31":"#fff","32":"#fff","33":"#fff","34":"#fff","35":"#fff","36":"#fff","37":"#fff","38":"#fff","39":"#fff"},"81":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","29":"#fff","30":"#fff","31":"#fff","40":"#fff","41":"#fff"},"82":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","29":"#fff","30":"#fff","31":"#fff","41":"#fff","42":"#fff"},"83":{"9":"#fff","10":"#fff","11":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","29":"#fff","30":"#fff","42":"#fff","43":"#fff"},"84":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","30":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff","50":"#fff"},"85":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff","43":"#fff","44":"#fff","45":"#fff","46":"#fff","47":"#fff","48":"#fff","49":"#fff"},"86":{"9":"#fff","10":"#fff","11":"#fff","12":"#fff","13":"#fff","14":"#fff","15":"#fff","16":"#fff","17":"#fff","18":"#fff","19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","28":"#fff","29":"#fff"},"87":{"28":"#fff"},"88":{"27":"#fff","28":"#fff","29":"#fff"},"89":{"24":"#fff","25":"#fff","26":"#fff","27":"#fff","28":"#fff"},"90":{"19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff","26":"#fff","27":"#fff"},"91":{"19":"#fff","20":"#fff","21":"#fff","22":"#fff","23":"#fff","24":"#fff","25":"#fff"},"92":{"19":"#fff","20":"#fff","21":"#fff"},"93":{}}}');
+        var frameData = {};
         var blockSize = 16 / blurFactor;
+        var fullBlack = false;
 
         function randomChar(func) {
             if (typeof func == 'function') {
@@ -72,20 +73,23 @@
             return str;
         }
 
-        function drawSingleBox(x,y) {
-            vport.fillStyle = randomColor();
+        function drawSingleBox(x, y) {
             if (tmp = getFrameData(x, y)) {
                 vport.fillStyle = tmp;
+            } else if (fullBlack) {
+                vport.fillStyle = '#000';
+            } else {
+                vport.fillStyle = randomColor();
             }
             vport.fillRect(x * blockSize, y * blockSize, blockSize, blockSize);
         }
 
-        function paint(rawx,rawy) {
+        function paint(rawx, rawy) {
             var x = parseInt(rawx / blurFactor / blockSize);
             var y = parseInt(rawy / blurFactor / blockSize);
             setFrameData(x, y, isErasing);
-            if(!redrawerEnabled) {
-                drawSingleBox(x,y);
+            if (!redrawerEnabled) {
+                drawSingleBox(x, y);
             }
         }
 
@@ -137,7 +141,7 @@
             blocks: function () {
                 for (var x = 0; x < vport.canvas.width / blockSize; x++) {
                     for (var y = 0; y < vport.canvas.height / blockSize; y++) {
-                        drawSingleBox(x,y);
+                        drawSingleBox(x, y);
                     }
                 }
             }
@@ -158,7 +162,7 @@
             if (!frameData[frameCurrent][x]) {
                 frameData[frameCurrent][x] = {};
             }
-            if(isErasing) {
+            if (isErasing) {
                 if (frameData[frameCurrent][x][y]) {
                     frameData[frameCurrent][x][y] = undefined;
                 }
@@ -178,41 +182,50 @@
         }
 
         function frameTick() {
-            frameCurrent = (frameCurrent+1)%4;
+            frameCurrent = (frameCurrent + 1) % frameCount;
         }
 
-        var redrawer = setInterval(fillPort, 100);
+        var redrawRate = 10;
+        var redrawer = setInterval(fillPort, redrawRate);
         var redrawerEnabled = true;
 
-        var frameRate = 350;
+        var frameRate = 300;
         var frameTicker = setInterval(frameTick, frameRate);
         var frameTickerEnabled = true;
 
+        var trackTempo;
 
 
         var vportObj = $('#viewport');
 
         $(document.body).keydown(function (e) {
-            console.log(e.keyCode, e.altKey, e.ctrlKey);
+            // console.log(e.keyCode, e.altKey, e.ctrlKey);
 
+            // toggle redrawer & trameTicker
             if (e.keyCode === 32 /* space */ && !e.altKey && !e.ctrlKey) {
                 if (redrawerEnabled) {
                     clearInterval(redrawer);
                     if (frameTickerEnabled) {
                         clearInterval(frameTicker);
+                        frameTickerEnabled = false;
                     }
-                    frameTickerEnabled = false;
                 } else {
-                    redrawer = setInterval(fillPort, 100);
+                    redrawer = setInterval(fillPort, redrawRate);
+                    if (!frameTickerEnabled) {
+                        frameTicker = setInterval(frameTick, frameRate);
+                        frameTickerEnabled = true;
+                    }
                 }
                 redrawerEnabled = !redrawerEnabled;
             }
 
+            // dump frameData
             if (e.keyCode === 68 /* d */ && !e.altKey && !e.ctrlKey) {
                 console.log("FrameData:");
                 console.log(JSON.stringify(frameData));
             }
 
+            // toggle frameTicker
             if (e.keyCode === 70 /* f */ && !e.altKey && !e.ctrlKey) {
                 if (frameTickerEnabled) {
                     clearInterval(frameTicker);
@@ -221,26 +234,71 @@
                 }
                 frameTickerEnabled = !frameTickerEnabled;
             }
+
+            // full-black; for per-pixel-debug
+            if (e.keyCode === 66 /* b */ && !e.altKey && !e.ctrlKey) {
+                fullBlack = !fullBlack;
+            }
+
+            // one frame forward
+            if (e.keyCode === 39 /* -> */ && !e.altKey && !e.ctrlKey) {
+                frameCurrent = (frameCurrent + 1) % frameCount;
+                fillPort();
+            }
+
+            // one frame back
+            if (e.keyCode === 37 /* <- */ && !e.altKey && !e.ctrlKey) {
+                var tmp = frameCurrent - 1;
+                if (tmp < 0) {
+                    tmp += frameCount;
+                }
+                frameCurrent = tmp % frameCount;
+                fillPort();
+            }
+
+            // tap-tempo
+            if (e.keyCode === 84 /* t */ && !e.altKey && !e.ctrlKey) {
+                var d;
+                if(!trackTempo) {
+                    d = new Date();
+                    trackTempo = d.getSeconds()*1000 + d.getMilliseconds();
+                } else {
+                    d = new Date();
+                    var now = d.getSeconds()*1000 + d.getMilliseconds();
+                    var intvl = now - trackTempo;
+                    console.log("Tempo, 1/ms: ",intvl,"Tempo, bpm:",parseInt(60000/intvl));
+                    trackTempo = false;
+                    frameRate = intvl;
+                    redrawRate = intvl/4;
+                    clearInterval(frameTicker);
+                    frameTicker = setInterval(frameTick, frameRate);
+                    clearInterval(redrawer);
+                    redrawer = setInterval(fillPort, redrawRate);
+                }
+            }
         });
 
         var dragPaint = false;
         var isErasing = false;
-        vportObj.mousedown(function(e){
-            if(e.ctrlKey) {
+        vportObj.mousedown(function (e) {
+            if (e.ctrlKey) {
                 isErasing = true;
             }
             dragPaint = true;
         });
-        vportObj.mouseup(function(e){
+        vportObj.mouseup(function (e) {
             dragPaint = false;
             isErasing = false;
         });
-        vportObj.mousemove(function(e){
-            if(dragPaint) {
+        vportObj.mousemove(function (e) {
+            if (dragPaint) {
                 paint(e.clientX, e.clientY);
             }
         });
 
+        fetch('rainbow.json')
+            .then(resp => resp.json())
+            .then(resp => frameData = resp);
     });
 </script>
 </body>
