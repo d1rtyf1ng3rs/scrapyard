@@ -1,0 +1,17 @@
+cmds[1]="Folders";
+cmds[1,1]="cd ~/Sources/";
+cmds[1,2]="cd ~/iMacros/Macros";
+cmds[2]="Configs";
+cmds[2,1]="vim ~/.zsh/cmdlist";
+cmds[2,2]="sudo vim /etc/hosts";
+cmds[2,3]="dpkg-reconfigure keyboard-configuration"
+mds[4]="Docker";
+cmds[4,1]="docker images";
+cmds[4,2]="docker ps -a";
+cmds[4,3]="docker run -it --rm ";
+cmds[4,4]="docker images | grep '<none>' | egrep -o '[0-9a-f]{12}' | xargs docker rmi";
+cmds[5]="Scripts"
+cmds[5,1]="echo 'Git cache fix'; rm .git/index && git reset"
+cmds[5,2]="echo 'Disk space usage'; du -hs * | sort -h"
+cmds[5,3]="echo 'Find git submodules'; git ls-files --stage | grep 160000"
+
